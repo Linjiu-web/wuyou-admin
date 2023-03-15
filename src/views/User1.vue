@@ -62,7 +62,7 @@
                         <el-image fit="contain" style="width: 50px;height: 50px;" :src="require('@/assets/user1.jpg')"
                             :preview-src-list="[require('@/assets/user1.jpg')]" v-if="scope.$index == 1" />
                         <el-image fit="fill" :src="scope.row.avatar"
-                            :preview-src-list="scope.row.avatar ? [scope.row.avatar] : []" v-else></el-image>
+                            :preview-src-lisct="scope.row.avatar ? [scope.row.avatar] : []" v-else></el-image>
                     </template>
                 </el-table-column>
                 <el-table-column prop="name" label="姓名" width="150">
@@ -146,7 +146,7 @@ export default {
             this.dialogVisible = true
             this.setformRules(resModel)
         },
-        //设置验证规则
+        // 重置验证规则
         setformRules() {
             this.$nextTick(() => {
                 this.$refs.myform.clearValidate()

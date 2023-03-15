@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
-import homeData from './homeData'
-import userData from './userData'
+import homeData from './data/homeData'
+import userData from './data/userData'
 
     //用户列表数据
     Mock.mock('/test/test', userData.getUserData)

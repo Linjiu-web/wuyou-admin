@@ -12,7 +12,10 @@
                 <span slot="title">{{ item.label }}</span>
             </template>
             <el-menu-item-group v-for="subItem in item.children" :key="subItem.name">
-                <el-menu-item @click="clickMenu(subItem)" :index="subItem.name">{{ subItem.label }}</el-menu-item>
+                <el-menu-item @click="clickMenu(subItem)" :index="subItem.name">
+                    <i :class="`el-icon-${subItem.icon}`"></i>
+                    <span slot="title">{{ subItem.label }}</span>
+                </el-menu-item>
             </el-menu-item-group>
         </el-submenu>
     </el-menu>
@@ -25,7 +28,7 @@
 }
 
 .el-menu {
-    height: 106.5vh;
+    height: 166.5vh;
     border-right: none;
 
     h3 {
@@ -68,8 +71,8 @@ export default {
                         {
                             path: '/page1',
                             name: 'page1',
-                            label: '页面1',
-                            icon: 'setting'
+                            label: '产品管理',
+                            icon: 'menu'
                         },
                         {
                             path: '/page2',

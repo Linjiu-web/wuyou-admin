@@ -1,7 +1,7 @@
 import Mock from 'mockjs'
 
 const List = []
-const count = 100
+const count = 60
 
 export default {
     getUserData: () => {

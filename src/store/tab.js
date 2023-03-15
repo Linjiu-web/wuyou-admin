@@ -5,8 +5,6 @@ export default {
             state.isCollapse = !state.isCollapse
         },
         selectMenu(state, val) {
-            console.log(val);
-            console.log(state, 'state');
             // 判断添加的数据是不是首页
             if (val.name !== 'home') {
                 const index = state.tabList.findIndex( item => item.name === val.name )

@@ -45,7 +45,7 @@ const routes = [
             {
                 path: 'page1',
                 name: 'Page1',
-                meta: { title: '页面1', icon: 'user' },
+                meta: { title: '产品管理', icon: 'user' },
                 component: PageOne,
             },
             {

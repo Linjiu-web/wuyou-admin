@@ -1,38 +1,32 @@
 <template>
     <div>
-        <el-upload 
-        class="avatar-uploader"
-        action="/apiTest/api/uploadAvater" 
-        :show-file-list="false" 
-        :on-success="handleAvatarSuccess"
-        :before-upload="beforeAvatarUpload">
-        <img v-if="imageUrl" :src="imageUrl" class="avatar">
-        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+        <el-upload class="avatar-uploader" action="/apiTest/api/uploadAvater" :show-file-list="false"
+            :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+            <img v-if="this.$store.state.product.p_image" :src="this.$store.state.product.p_image" class="avatar">
+            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
-        <span>-------------------</span>
-        <UpLoadeAvater></UpLoadeAvater>
     </div>
 </template>
 
 <script>
-import  UpLoadeAvater  from "@/components/uploadAvater/UploadAvater"
 export default {
-    name: 'PageTwo',
-    components: {UpLoadeAvater},
+    name: 'UploadeAvater',
+    components: {},
     data() {
         return {
-            imageUrl: ''
+            // imageUrl: ''
         }
     },
     methods: {
         // 上传成功的回调
         handleAvatarSuccess(res, file) {
+            this.$store.commit('product/updateImgUrl', res.url)
             this.imageUrl = URL.createObjectURL(file.raw);
-            this.$message({
-                type: 'success',
-                message: '上传成功！'
-            })
-            console.log(res.url);
+            // this.$message({
+            //     type: 'success',
+            //     message: '上传成功！'
+            // })
+            // console.log(res.url);
         },
         // 上传文件格式不正确的回调
         beforeAvatarUpload(file) {

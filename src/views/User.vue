@@ -146,7 +146,7 @@ export default {
         //当点击修改（新增）按钮时设置表单数据
         setFormModel(resModel = {}) {
             this.formModel = Object.assign({}, this.ruleForm, resModel)
-            this.dialogTitle = (this.formModel.id ? '编辑' : '新增') + '用户'
+            this.dialogTitle = this.formModel.id ? '编辑用户' : '新增用户'
             this.dialogVisible = true
             this.setformRules(resModel)
         },
